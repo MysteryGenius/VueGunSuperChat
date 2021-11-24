@@ -1,4 +1,4 @@
-const GUN = require('gun');
+import GUN from 'gun';
 import 'gun/sea';
 import 'gun/axe';
 import store from './store';
