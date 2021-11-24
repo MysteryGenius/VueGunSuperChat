@@ -1,10 +1,11 @@
-import GUN from 'gun';
+const GUN = require('gun');
 import 'gun/sea';
 import 'gun/axe';
 import store from './store';
 
 // Database
-export const db = GUN();
+const server = require('http').createServer().listen(8080);
+const db = GUN({web: server});
 
 // Gun User
 export const user = db.user().recall({sessionStorage: true});
