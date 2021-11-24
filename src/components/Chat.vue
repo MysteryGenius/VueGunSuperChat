@@ -53,12 +53,12 @@
         },
         '-': 1, // filter in reverse
       };
-      db.get('uwu-chat')
+      db.get('stye-uwu-chat')
         .map(match)
         .once(async (data, id) => {
           if (data) {
             // Key for end-to-end encryption
-            const key = '#foo';
+            const key = '#sytesytesyte';
             var message = {
               // transform the data
               who: await db.user(data).get('alias'), // a user might lie who they are! So let the user system detect whose data it is.
@@ -90,10 +90,10 @@
         lastScrollTop = e.target.scrollTop;
       },
       async sendMessage() {
-        const secret = await SEA.encrypt(this.newMessage, '#foo');
+        const secret = await SEA.encrypt(this.newMessage, '#sytesytesyte');
         const message = user.get('all').set({ what: secret });
         const index = new Date().toISOString();
-        db.get('uwu-chat').get(index).put(message);
+        db.get('stye-uwu-chat').get(index).put(message);
         this.newMessage = '';
         this.canAutoScroll = true;
         this.autoScroll();
